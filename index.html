@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>M Rendy Bryan Pratama | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1152d4",
+                "background-light": "#f6f6f8",
+                "background-dark": "#101622",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(17, 82, 212, 0.15) 0%, rgba(16, 22, 34, 0) 70%);
+        }
+    </style>
+    <!-- Modal -->
+<div id="rekrutModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+  <div class="glass p-8 rounded-2xl w-full max-w-lg relative">
+    
+    <!-- Close Button -->
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-xl">&times;</button>
+    
+    <h2 class="text-2xl font-bold mb-6">Rekrut Saya</h2>
+
+    <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
+      <input id="nama" type="text" placeholder="Nama Anda" required
+        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10"/>
+
+      <input id="email" type="email" placeholder="Email Anda" required
+        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10"/>
+
+      <textarea id="pesan" rows="4" placeholder="Pesan Anda..." required
+        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10"></textarea>
+
+      <button type="submit"
+        class="w-full bg-primary py-3 rounded-lg font-bold text-white">
+        Kirim
+      </button>
+    </form>
+
+  </div>
+</div>
+<script>
+ 
+
+</script>
+ <!-- ================= MODAL REKRUT ================= -->
+<div id="rekrutModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="glass p-8 rounded-2xl w-full max-w-lg relative">
+
+    <button onclick="closeModal()" class="absolute top-3 right-4 text-white text-2xl">&times;</button>
+
+    <h2 class="text-2xl font-bold mb-6">Rekrut Saya</h2>
+
+    <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
+      <input id="nama" type="text" placeholder="Nama Anda" required
+        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10"/>
+
+      <input id="email" type="email" placeholder="Email Anda" required
+        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10"/>
+
+      <textarea id="pesan" rows="4" placeholder="Pesan Anda..." required
+        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10"></textarea>
+
+      <button type="submit" class="w-full bg-primary py-3 rounded-lg font-bold text-white">
+        Kirim
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ================= MODAL BUKTI ================= -->
+<div id="buktiModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="glass p-4 rounded-2xl max-w-2xl w-full relative">
+
+    <button onclick="closeBukti()" class="absolute top-3 right-4 text-white text-2xl">&times;</button>
+
+    <img src="rennnn.png" class="w-full rounded-xl" alt="Bukti Kerja">
+  </div>
+</div>
+
+<!-- ================= MODAL PROGRAM ================= -->
+<div id="programModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="glass p-6 rounded-2xl max-w-xl w-full relative">
+
+    <button onclick="closeProgram()" class="absolute top-3 right-4 text-white text-2xl">&times;</button>
+
+    <h2 class="text-xl font-bold mb-4">Program Sederhana</h2>
+
+    <pre class="bg-black/40 p-4 rounded-lg text-green-400 text-sm">
+let nama = "Rendy";
+console.log("Halo " + nama);
+    </pre>
+
+  </div>
+</div>
+
+<!-- ================= MODAL SHOWCASE (KOTAK 4) ================= -->
+<div id="showcaseModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="glass p-6 rounded-2xl max-w-2xl w-full relative">
+
+    <button onclick="closeShowcase()" class="absolute top-3 right-4 text-white text-2xl">&times;</button>
+
+    <h2 class="text-xl font-bold mb-4">Showcase Karya Saya</h2>
+
+    <div class="space-y-4">
+
+      <div class="bg-black/30 p-4 rounded-lg">
+        <h3 class="font-bold text-primary">Website Portfolio</h3>
+        <p class="text-sm text-slate-300">HTML, CSS, Responsive</p>
+      </div>
+
+      <div class="bg-black/30 p-4 rounded-lg">
+        <h3 class="font-bold text-primary">Landing Page</h3>
+        <p class="text-sm text-slate-300">Flexbox & UI Modern</p>
+      </div>
+
+      <div class="bg-black/30 p-4 rounded-lg">
+        <h3 class="font-bold text-primary">Mini JS Project</h3>
+        <p class="text-sm text-slate-300">JavaScript Logic</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+  </div>
+
+</div>
+<script>
+function openModal() {
+  document.getElementById("rekrutModal").classList.remove("hidden");
+  document.getElementById("rekrutModal").classList.add("flex");
+}
+
+function closeModal() {
+  document.getElementById("rekrutModal").classList.remove("flex");
+  document.getElementById("rekrutModal").classList.add("hidden");
+}
+
+// BUkti kerja modal
+function openBukti() {
+  document.getElementById("buktiModal").classList.remove("hidden");
+  document.getElementById("buktiModal").classList.add("flex");
+}
+
+function openProgram() {
+  document.getElementById("programModal").classList.remove("hidden");
+  document.getElementById("programModal").classList.add("flex");
+}
+
+function closeProgram() {
+  document.getElementById("programModal").classList.remove("flex");
+  document.getElementById("programModal").classList.add("hidden");
+}
+
+function openShowcase() {
+  document.getElementById("showcaseModal").classList.remove("hidden");
+  document.getElementById("showcaseModal").classList.add("flex");
+}
+
+function closeShowcase() {
+  document.getElementById("showcaseModal").classList.remove("flex");
+  document.getElementById("showcaseModal").classList.add("hidden");
+}
+function openShowcase() {
+  document.getElementById("showcaseModal").classList.remove("hidden");
+  document.getElementById("showcaseModal").classList.add("flex");
+}
+
+function closeShowcase() {
+  document.getElementById("showcaseModal").classList.remove("flex");
+  document.getElementById("showcaseModal").classList.add("hidden");
+}
+
+function closeBukti() {
+  document.getElementById("buktiModal").classList.remove("flex");
+  document.getElementById("buktiModal").classList.add("hidden");
+}
+
+// WhatsApp
+function sendToWhatsApp(e) {
+  e.preventDefault();
+
+  let nama = document.getElementById("nama").value;
+  let email = document.getElementById("email").value;
+  let pesan = document.getElementById("pesan").value;
+
+  let nomor = "6283894665877";
+
+  let url = `https://wa.me/${nomor}?text=Halo, saya ${nama}%0AEmail: ${email}%0APesan: ${pesan}`;
+
+  window.open(url, "_blank");
+}
+</script>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-black text-xl">M</div>
+<span class="font-bold text-xl tracking-tight hidden sm:block uppercase">M.Rendy Bryan Pratama</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">Tentang</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Keahlian</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Proyek</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Kontak</a>
+</div>
+<button onclick="openModal()" 
+class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform active:scale-95 shadow-lg shadow-primary/20">
+  Rekrut Saya
+</button>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-gradient">
+<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8 z-10">
+<div class="space-y-4">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">Tersedia untuk ide proyek baru</span>
+<h1 class="text-5xl lg:text-7xl font-black leading-tight tracking-tighter">
+                            Rendy <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400"></span>
+</h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">Perkenalkan, nama saya Rendy Bryan Pratama. Saya adalah seorang pelajar yang memiliki semangat untuk terus belajar dan mengembangkan diri. Saya tertarik mempelajari berbagai hal baru, terutama yang berkaitan dengan teknologi, pendidikan, dan keterampilan yang bermanfaat untuk masa depan</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 transition-all shadow-xl shadow-primary/30 group" href="#projects">Lihat Karya Saya <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span></a>
+<a class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all" href="#contact">Mari Berdiskusi</a>
+</div>
+</div>
+<div class="relative lg:justify-self-end">
+<div class="relative w-72 h-72 lg:w-[450px] lg:h-[450px] rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
+<img alt="Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional portrait of M Rendy Bryan Pratama" src= "renpek.jpeg"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 glass rounded-2xl flex items-center justify-center -z-10 animate-bounce delay-700">
+<span class="material-symbols-outlined text-primary text-5xl">code</span>
+</div>
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 blur-3xl rounded-full -z-10"></div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 border-t border-white/5" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-3xl">
+<h2 class="text-3xl lg:text-4xl font-bold mb-8 flex items-center gap-4"><span class="w-12 h-1 bg-primary rounded-full"></span> Tentang Saya</h2>
+<div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed"><p> Saya tertarik untuk memahami bagaimana sebuah aplikasi dibuat, mulai dari penulisan kode hingga tampilan antarmuka yang nyaman digunakan. Dengan dasar pembelajaran yang terus saya kembangkan, saya berusaha menggabungkan logika pemrograman dengan desain yang sederhana dan mudah dipahami. Tujuan saya adalah terus belajar dan berkembang agar mampu menciptakan aplikasi yang fungsional serta memberikan manfaat bagi pengguna.</p><p>Dengan landasan dalam teknik dan estetika, saya berspesialisasi dalam menciptakan arsitektur fungsional yang terlihat sebagus kinerjanya. Tujuan saya adalah selalu memberikan nilai melalui kode yang bersih dan antarmuka yang intuitif.</p></div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-24 bg-slate-50/50 dark:bg-slate-900/20" id="skills">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl lg:text-4xl font-bold mb-4">Keahlian Teknis</h2>
+<p class="text-slate-600 dark:text-slate-400">Teknologi dan alat yang saya gunakan untuk mewujudkan ide</p>
+</div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+  <!-- Skill 1 -->
+  <div class="glass p-8 rounded-2xl hover:border-primary/50 transition-all group text-center">
+    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+      <span class="material-symbols-outlined text-primary text-4xl">code</span>
+    </div>
+    <h3 class="font-bold text-lg">Frontend Development</h3>
+    <p class="text-sm text-slate-500 mt-2">Minat pada HTML, CSS, dan JavaScript</p>
+  </div>
+
+  <!-- Skill 2 -->
+  <div class="glass p-8 rounded-2xl text-center cursor-pointer" onclick="openBukti()">
+    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+      <span class="material-symbols-outlined text-primary text-4xl">visibility</span>
+    </div>
+    <h3 class="font-bold text-lg">Bukti Kerja</h3>
+    <p class="text-sm text-slate-500 mt-2">Klik untuk melihat hasil project</p>
+  </div>
+
+  <!-- Skill 3 -->
+  <div class="glass p-8 rounded-2xl text-center cursor-pointer" onclick="openProgram()">
+    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+      <span class="material-symbols-outlined text-primary text-4xl">terminal</span>
+    </div>
+    <h3 class="font-bold text-lg">Showcase Program</h3>
+    <p class="text-sm text-slate-500 mt-2">Klik untuk lihat hasil coding</p>
+  </div>
+
+   <!-- Skill 4 - Showcase Hasil Karya -->
+  <div class="glass p-8 rounded-2xl text-center cursor-pointer group hover:border-primary/50 transition-all"
+     onclick="openShowcase()">
+
+  <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6
+              group-hover:scale-110 group-hover:bg-primary/20 transition-all">
+
+    <span class="material-symbols-outlined text-primary text-4xl">
+      work
+    </span>
+  </div>
+
+  <h3 class="font-bold text-lg group-hover:text-primary transition-colors">
+    Showcase Karya
+  </h3>
+
+  <p class="text-sm text-slate-500 mt-2">
+    Klik untuk melihat hasil project saya
+  </p>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-24" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="text-3xl lg:text-4xl font-bold mb-4">Proyek Terpilih</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-md">Kumpulan karya terbaru saya dalam pengembangan dan desain.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:underline">Lihat Semua Proyek <span class="material-symbols-outlined">arrow_outward</span></button>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<!-- Project 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-2xl mb-6 glass">
+<img alt="Project 1" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" 
+src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"/>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Website Portfolio</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-4">
+Website portfolio pribadi yang dibuat menggunakan HTML dan CSS dengan desain modern dan responsif.
+</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">HTML</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">CSS</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">Responsive</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-2xl mb-6 glass">
+<img alt="Project 2" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" 
+src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"/>
+</div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Landing Page Bisnis</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-4">
+Landing page modern untuk bisnis dengan tampilan menarik menggunakan HTML & CSS serta layout fleksibel.
+</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">HTML</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">CSS</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">Flexbox</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-slate-50/50 dark:bg-slate-900/20" id="contact">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<div>
+<h2 class="text-4xl font-bold mb-6">Mari bekerja sama.</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-md">Saya selalu terbuka untuk mendiskusikan proyek baru, ide kreatif, atau peluang untuk menjadi bagian dari visi Anda.</p>
+<div class="space-y-6">
+<a class="flex items-center gap-4 group" href="mailto:hello@rendybryan.com">
+<div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="text-sm text-slate-500">Email Saya</p>
+<p class="font-bold text-lg">rendybryanpratama@gmail.com</p>
+</div>
+</a>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary">distance</span>
+</div>
+<div>
+<p class="text-sm text-slate-500">Location</p>
+<p class="font-bold text-lg" data-location="Riau, Indonesia">Riau, indonesia</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-12">
+
+<a href="https://instagram.com/d_rendyy7" target="_blank"
+class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+
+<a href="https://wa.me/6283894665877" target="_blank"
+class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chat</span>
+</a>
+
+<a href="mailto:rendybryanpratama@gmail.com"
+class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">mail</span>
+</a>
+
+</div>
+<a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">hub</span>
+</a>
+<a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+<a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="glass p-8 lg:p-12 rounded-3xl">
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium opacity-70 ml-1">Nama Lengkap</label>
+<input class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Nama" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium opacity-70 ml-1">Alamat Email</label>
+<input class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="@gmail.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium opacity-70 ml-1">Subjek</label>
+<input class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Project Inquiry" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium opacity-70 ml-1">Pesan</label>
+<textarea class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Ceritakan tentang proyek Anda..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20">Kirim Pesan</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-12 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-sm text-slate-500">© 2024 M Rendy Bryan Pratama. Hak cipta dilindungi undang-undang.</p>
+<div class="flex gap-8 text-sm font-medium text-slate-500">
+<a class="hover:text-primary" href="#">Kebijakan Privasi</a>
+<a class="hover:text-primary" href="#">Ketentuan Layanan</a>
+</div>
+</div>
+</footer>
+</main>
+</body>
+</html>
