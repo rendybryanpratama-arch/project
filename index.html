@@ -44,7 +44,7 @@
     <!-- Close Button -->
     <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-xl">&times;</button>
     
-    <h2 class="text-2xl font-bold mb-6">Rekrut Saya</h2>
+    <h2 class="text-2xl font-bold mb-6">hubungi Saya</h2>
 
     <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
       <input id="nama" type="text" placeholder="Nama Anda" required
@@ -74,7 +74,7 @@
 
     <button onclick="closeModal()" class="absolute top-3 right-4 text-white text-2xl">&times;</button>
 
-    <h2 class="text-2xl font-bold mb-6">Rekrut Saya</h2>
+    <h2 class="text-2xl font-bold mb-6">hubungi saya</h2>
 
     <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
       <input id="nama" type="text" placeholder="Nama Anda" required
@@ -226,14 +226,14 @@ function sendToWhatsApp(e) {
 <span class="font-bold text-xl tracking-tight hidden sm:block uppercase">M.Rendy Bryan Pratama</span>
 </div>
 <div class="hidden md:flex items-center gap-10">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">Tentang</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Keahlian</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Proyek</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">profile</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">hoby</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">game</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Kontak</a>
 </div>
 <button onclick="openModal()" 
 class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform active:scale-95 shadow-lg shadow-primary/20">
-  Rekrut Saya
+  Hubungi saya
 </button>
 </div>
 </nav>
@@ -280,8 +280,8 @@ class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm 
 <section class="py-24 bg-slate-50/50 dark:bg-slate-900/20" id="skills">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-3xl lg:text-4xl font-bold mb-4">Keahlian Teknis</h2>
-<p class="text-slate-600 dark:text-slate-400">Teknologi dan alat yang saya gunakan untuk mewujudkan ide</p>
+<h2 class="text-3xl lg:text-4xl font-bold mb-4">hoby</h2>
+<p class="text-slate-600 dark:text-slate-400">hobby saya</p>
 </div>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
@@ -290,21 +290,21 @@ class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm 
     <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
       <span class="material-symbols-outlined text-primary text-4xl">code</span>
     </div>
-    <h3 class="font-bold text-lg">Frontend Development</h3>
-    <p class="text-sm text-slate-500 mt-2">Minat pada HTML, CSS, dan JavaScript</p>
+    <h3 class="font-bold text-lg">bola</h3>
+    <p class="text-sm text-slate-500 mt-2">mini soccer</p>
   </div>
 
   <!-- Skill 2 -->
-  <div class="glass p-8 rounded-2xl text-center cursor-pointer" onclick="openBukti()">
+ <div class="glass p-8 rounded-2xl hover:border-primary/50 transition-all group text-center">
     <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
       <span class="material-symbols-outlined text-primary text-4xl">visibility</span>
     </div>
-    <h3 class="font-bold text-lg">Bukti Kerja</h3>
+    <h3 class="font-bold text-lg">hasil karya Kerja</h3>
     <p class="text-sm text-slate-500 mt-2">Klik untuk melihat hasil project</p>
   </div>
 
   <!-- Skill 3 -->
-  <div class="glass p-8 rounded-2xl text-center cursor-pointer" onclick="openProgram()">
+  <div class="glass p-8 rounded-2xl hover:border-primary/50 transition-all group text-center">
     <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
       <span class="material-symbols-outlined text-primary text-4xl">terminal</span>
     </div>
@@ -342,8 +342,8 @@ class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm 
 <div class="max-w-7xl mx-auto px-6">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
 <div>
-<h2 class="text-3xl lg:text-4xl font-bold mb-4">Proyek Terpilih</h2>
-<p class="text-slate-600 dark:text-slate-400 max-w-md">Kumpulan karya terbaru saya dalam pengembangan dan desain.</p>
+<h2 class="text-3xl lg:text-4xl font-bold mb-4">Game</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-md">minat bakat game</p>
 </div>
 <button class="text-primary font-bold flex items-center gap-2 hover:underline">Lihat Semua Proyek <span class="material-symbols-outlined">arrow_outward</span></button>
 </div>
@@ -352,32 +352,32 @@ class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm 
 <div class="group cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl mb-6 glass">
 <img alt="Project 1" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" 
-src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"/>
+src="https://share.google/f2kFYhPJYW9TDsNRy"/>
 </div>
-<h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Website Portfolio</h3>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">MOBILE LEGEND</h3>
 <p class="text-slate-600 dark:text-slate-400 mb-4">
-Website portfolio pribadi yang dibuat menggunakan HTML dan CSS dengan desain modern dan responsif.
+BISA MAIN DI BERBAGAI ROLE.
 </p>
 <div class="flex gap-2">
-<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">HTML</span>
-<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">CSS</span>
-<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">Responsive</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">JUNGLE</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">GOLD</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">ROAM</span>
 </div>
 </div>
 <!-- Project 2 -->
 <div class="group cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl mb-6 glass">
 <img alt="Project 2" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" 
-src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"/>
+src="https://share.google/73mn2QR7IRPiNJdz9"/>
 </div>
-<h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Landing Page Bisnis</h3>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">FREE FIRE</h3>
 <p class="text-slate-600 dark:text-slate-400 mb-4">
-Landing page modern untuk bisnis dengan tampilan menarik menggunakan HTML & CSS serta layout fleksibel.
+BISA SUPORT
 </p>
 <div class="flex gap-2">
-<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">HTML</span>
-<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">CSS</span>
-<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">Flexbox</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">RUSHER</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">SUPORT</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs">SNIPER</span>
 </div>
 </div>
 </div>
